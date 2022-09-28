@@ -37,6 +37,7 @@ class Terminal {
     execute(command) {
         this.appendLine("> " + command);
         this.processCommand(command);
+        window.scrollTo(0, document.body.scrollHeight);
         this.input.value = "";
     }
 
