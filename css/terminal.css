@@ -1,0 +1,55 @@
+* {
+    transition: all 0.3s ease ;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #1e1e1e;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#header {
+    background-color: grey;
+    color: #dbcaca;
+    text-shadow: 1px 1px 1px #000000;
+    width: 100%;
+}
+
+#header .header-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+}
+
+#terminal {
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+
+#terminal .terminal-line {
+    display: block;
+    padding: 2px;
+}
+
+#terminal .input {
+    box-sizing: border-box;
+    border: 0;
+    background: #1e1e1e;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 15px;
+    overflow: hidden;
+    resize: none;
+    outline: 0;
+    width: 100%;
+}
+
+#terminal .input:focus {
+    outline: none;
+    border: 0;
+}
