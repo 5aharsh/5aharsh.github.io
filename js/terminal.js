@@ -21,6 +21,7 @@ class Terminal {
             this.options.setCommands({
                 whoami: ["Saharsh Anand (@5aharsh)"],
                 date: [new Date()],
+                pwd: [window.location.href]
 
             });
             this.options.setBehaviour({
