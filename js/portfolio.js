@@ -7,7 +7,7 @@ var focusTermInput = () => {
     termInput.focus();
 };
 
-termInput.onkeyup = (event) => {
+termInput.onkeydown = (event) => {
     if(event.keyCode == 13) {
         var command = termInput.value;
         terminal.execute(command);

@@ -37,7 +37,6 @@ class Terminal {
     execute(command) {
         this.appendLine("> " + command);
         this.processCommand(command);
-        window.scrollTo(0, document.body.scrollHeight);
         this.input.value = "";
     }
 
@@ -47,10 +46,11 @@ class Terminal {
         terminalLine.className = "terminal-line";
         terminalLine.textContent = text;
         terminalPrint.appendChild(terminalLine);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     processCommand(command) {
-        command = command.slice(0, command.length - 1);
+        command = command.replace(/(?:\r\n|\r|\n)/g, '');
         if (command != "") {
             if (this.options.commands[command] === undefined) {
                 if (this.options.behaviour[command] === undefined) {
