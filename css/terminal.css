@@ -12,17 +12,19 @@ body > * {
 }
 
 #header {
-    background-color: grey;
-    color: #dbcaca;
+    background-image: linear-gradient(#5f5d53, #42413c);
+    color: #f0e9e9;
     text-shadow: 1px 1px 1px #000000;
     width: 100%;
 }
 
 #header .header-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     padding: 5px;
     display: block;
+    text-align: center;
 }
 
 #terminal {

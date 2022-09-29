@@ -1,8 +1,9 @@
 class Options {
-    constructor(selector = "#terminal", behaviour = {}, commands = {}) {
+    constructor(selector = "#terminal", behaviour = {}, commands = {}, files = {}) {
         this.selector = selector;
         this.behaviour = behaviour;
         this.commands = commands;
+        this.files = files;
     }
 
     setBehaviour(behaviour) {
@@ -12,20 +13,37 @@ class Options {
     setCommands(commands) {
         this.commands = commands;
     }
+
+    setFiles(files) {
+        this.files = files;
+    }
 }
 
 class Terminal {
     constructor(options = null) {
         if (options === null) {
             this.options = new Options();
+            this.options.setFiles({
+                "about.txt": [
+                    "Some file to read from"
+                ],
+                "socials.txt": [
+                    "LinkedIn - https://www.linkedin.com/in/5aharsh/",
+                    "Stackoverflow - https://stackoverflow.com/users/4720652"
+                ],
+                "sample.txt": [
+                    ""
+                ]
+            });
             this.options.setCommands({
                 whoami: ["Saharsh Anand (@5aharsh)"],
                 date: [new Date()],
-                pwd: [window.location.href]
+                pwd: [window.location.href],
+                ls: [this.listFiles()]
 
             });
             this.options.setBehaviour({
-                unknown: ["Unknown command... Try 'help'"],
+                unknown: ["Unknown command... Try 'help'. Add some really long sentence to test the width thing"],
                 help: this.showHelp(),
             });
         } else {
@@ -82,5 +100,14 @@ class Terminal {
             help.push("- " + i);
         }
         return help;
+    }
+
+    listFiles(){
+        var files = "";
+        for (var i in this.options.files) {
+            // Add some extra gap for readability
+            files = files + "\u00a0" + i + "\u0009";
+        }
+        return files;
     }
 }
