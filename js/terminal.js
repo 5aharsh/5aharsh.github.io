@@ -1,6 +1,5 @@
 class Options {
-    constructor(selector = "#terminal", behaviour = {}, commands = {}, files = {}) {
-        this.selector = selector;
+    constructor(behaviour = {}, commands = {}, files = {}) {
         this.behaviour = behaviour;
         this.commands = commands;
         this.files = files;
@@ -20,7 +19,9 @@ class Options {
 }
 
 class Terminal {
-    constructor(options = null) {
+    constructor(selector = "#terminal", options = null) {
+        this.terminal = document.querySelector(selector);
+        this.input = document.querySelector("#term-input");
         if (options === null) {
             this.options = new Options();
             this.options.setFiles({
@@ -29,28 +30,56 @@ class Terminal {
                 ],
                 "socials.txt": [
                     "LinkedIn - https://www.linkedin.com/in/5aharsh/",
-                    "Stackoverflow - https://stackoverflow.com/users/4720652"
+                    "Stackoverflow - https://stackoverflow.com/users/4720652",
+                    "GitHub - https://github.com/5aharsh"
                 ],
                 "sample.txt": [
                     ""
                 ]
             });
             this.options.setCommands({
-                whoami: ["Saharsh Anand (@5aharsh)"],
-                date: [new Date()],
-                pwd: [window.location.href],
-                ls: [this.listFiles()]
+                whoami: (_command_line) => {
+                    this.appendMultiLine([
+                        "Saharsh Anand (@5aharsh)"
+                    ])
+                },
+                date: (_command_line) => {
+                    this.appendMultiLine([
+                        new Date()
+                    ])
+                },
+                pwd: (_command_line) => {
+                    this.appendMultiLine([
+                        window.location.href
+                    ])
+                },
+                clear: this.clearTerminal,
+                ls: (_command_line) => {
+                    this.appendMultiLine([
+                        this.listFiles()
+                    ])
+                },
+                cat: (_command_line)=>{
+                    var file = _command_line[1];
+                    if (this.options.files[file] === undefined) {
+                        this.appendLine("File not found");
+                    } else {
+                        this.appendMultiLine(this.options.files[file]);
+                    }
+                }
 
             });
             this.options.setBehaviour({
-                unknown: ["Unknown command... Try 'help'. Add some really long sentence to test the width thing"],
+                unknown: ["Unknown command... Try 'help'"],
                 help: this.showHelp(),
             });
         } else {
             this.options = options;
         }
-        this.terminal = document.querySelector(this.options.selector);
-        this.input = document.querySelector("#term-input");
+    }
+
+    static getTerminalPrint(terminal = '#terminal-print'){
+        return document.querySelector(terminal);
     }
 
     execute(command) {
@@ -68,26 +97,31 @@ class Terminal {
         window.scrollTo(0, document.body.scrollHeight);
     }
 
+    appendMultiLine(textArray) {
+        for (var i of textArray) {
+            this.appendLine(i);
+        }
+    }
+
     processCommand(command) {
         command = command.replace(/(?:\r\n|\r|\n)/g, '');
+        var command_line = command;
+        var command_line_array = command_line.split(" ");
         if (command != "") {
-            if (this.options.commands[command] === undefined) {
-                if (this.options.behaviour[command] === undefined) {
+            if (this.options.commands[command_line_array[0]] === undefined) {
+                if (this.options.behaviour[command_line_array[0]] === undefined) {
                     var output = this.options.behaviour["unknown"];
                     for (var i of output) {
                         this.appendLine(i);
                     }
                 } else {
-                    var output = this.options.behaviour[command];
+                    var output = this.options.behaviour[command_line_array[0]];
                     for (var i of output) {
                         this.appendLine(i);
                     }
                 }
             } else {
-                var output = this.options.commands[command];
-                for (var i of output) {
-                    this.appendLine(i);
-                }
+                this.options.commands[command_line_array[0]](command_line_array);
             }
         }
     }
@@ -109,5 +143,9 @@ class Terminal {
             files = files + "\u00a0" + i + "\u0009";
         }
         return files;
+    }
+
+    clearTerminal(_command_line){
+        Terminal.getTerminalPrint().innerHTML = "";
     }
 }
