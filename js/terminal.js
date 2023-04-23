@@ -21,12 +21,15 @@ class Options {
 class Terminal {
     constructor(selector = "#terminal", options = null) {
         this.terminal = document.querySelector(selector);
-        this.input = document.querySelector("#term-input");
+        this.input = document.querySelector("#terminal-text");
         if (options === null) {
             this.options = new Options();
             this.options.setFiles({
                 "about.txt": [
-                    "Some file to read from"
+                    "<h3>Hi 👋,</h3>",
+                    "I am Saharsh, a software Developer from India.",
+                    "Currently, I am working as an engineering Associate at Goldman Sachs.",
+                    "I love working on complex software problems and building simple solutions."
                 ],
                 "socials.txt": [
                     "LinkedIn - https://www.linkedin.com/in/5aharsh/",
@@ -83,7 +86,8 @@ class Terminal {
     }
 
     execute(command) {
-        this.appendLine("> " + command);
+        this.appendLine("<div id='terminal-pointer'>[ <span>Saharsh@Desktop (@5aharsh) ~</span> ]</div>");
+        this.appendLine(command);
         this.processCommand(command);
         this.input.value = "";
     }
@@ -92,7 +96,7 @@ class Terminal {
         var terminalPrint = document.querySelector("#terminal-print");
         var terminalLine = document.createElement("span");
         terminalLine.className = "terminal-line";
-        terminalLine.textContent = text;
+        terminalLine.innerHTML = text;
         terminalPrint.appendChild(terminalLine);
         window.scrollTo(0, document.body.scrollHeight);
     }

@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     background: #1e1e1e;
     color: #ffffff;
     font-size: 15px;
-    font-family: monospace;
+    font-family: 'Roboto Mono', monospace;
 }
 
 body > * {
@@ -29,6 +31,7 @@ body > * {
 
 #terminal {
     background: none;
+    overflow-wrap: break-word;
     height: 100%;
     width: 100%;
 }
@@ -38,12 +41,26 @@ body > * {
     padding: 2px;
 }
 
+#terminal .terminal-line > h1, h2, h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#terminal #terminal-pointer {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+#terminal #terminal-pointer span {
+    font-weight: 300;
+}
+
 #terminal .input {
     box-sizing: border-box;
     border: 0;
     background: #1e1e1e;
     color: #ffffff;
-    font-family: monospace;
+    font-family: 'Roboto Mono', monospace;
     font-size: 15px;
     overflow: hidden;
     resize: none;
@@ -53,5 +70,4 @@ body > * {
 
 #terminal .input:focus {
     outline: none;
-    border: 0;
 }

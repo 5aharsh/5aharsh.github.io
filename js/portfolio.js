@@ -1,6 +1,6 @@
 var terminal = new Terminal();
 
-var termInput = document.querySelector("#term-input");
+var termInput = document.querySelector("#terminal-text");
 
 var focusTermInput = () => {
     document.execCommand('copy');
