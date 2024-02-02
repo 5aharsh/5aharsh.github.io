@@ -46,6 +46,7 @@ class Terminal {
                     "Toolkit - [ <a href='https://github.com/5aharsh/toolkit'>https://github.com/5aharsh/toolkit</a> ]",
                     "Audio Stream - [ <a href='https://github.com/5aharsh/audio-stream'>https://github.com/5aharsh/audio-stream</a> ]",
                     "Blog - [ <a href='https://github.com/5aharsh/blog-json'>https://github.com/5aharsh/blog-json</a> ]",
+                    "More at <a href='https://github.com/5aharsh?tab=repositories'>my github</a>"
                 ]
             });
             this.options.setCommands({
