@@ -40,8 +40,12 @@ class Terminal {
                     "Stackoverflow - [ <a href='https://stackoverflow.com/users/4720652'>https://stackoverflow.com/users/4720652</a> ]",
                     "GitHub - [ <a href='https://github.com/5aharsh'>https://github.com/5aharsh</a> ]"
                 ],
-                "sample.txt": [
-                    ""
+                "projects.txt": [
+                    "GitHub Reader - [ <a href='https://github.com/5aharsh/github-reader'>https://github.com/5aharsh/github-reader</a> ]",
+                    "Mesh - [ <a href='https://github.com/5aharsh/mesh'>https://github.com/5aharsh/mesh</a> ]",
+                    "Toolkit - [ <a href='https://github.com/5aharsh/toolkit'>https://github.com/5aharsh/toolkit</a> ]",
+                    "Audio Stream - [ <a href='https://github.com/5aharsh/audio-stream'>https://github.com/5aharsh/audio-stream</a> ]",
+                    "Blog - [ <a href='https://github.com/5aharsh/blog-json'>https://github.com/5aharsh/blog-json</a> ]",
                 ]
             });
             this.options.setCommands({
