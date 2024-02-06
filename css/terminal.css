@@ -86,9 +86,11 @@ a:hover {
     font-family: 'Roboto Mono', monospace;
     font-size: 15px;
     overflow: hidden;
-    resize: none;
     outline: 0;
+    padding: 3px 0 3px 0;
+    resize: none;
     width: 100%;
+    font-weight: 300;
 }
 
 #terminal .input:focus {
