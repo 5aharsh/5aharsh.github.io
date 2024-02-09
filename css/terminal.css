@@ -9,6 +9,11 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+::selection {
+    background: #e7e7e7;
+    color: #0f0f0f
+}
+
 body > * {
     transition: all 0.3s ease ;
 }
@@ -59,14 +64,22 @@ a:hover {
     width: 100%;
 }
 
+.terminal-info > * {
+    padding: 0 !important;
+}
+
+.terminal-info #terminal-helper {
+    background: #3a3a3a
+}
+
 #terminal .terminal-line {
     display: block;
     padding: 3px;
 }
 
 #terminal .terminal-line > h1, h2, h3 {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #terminal #terminal-pointer {

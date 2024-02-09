@@ -1,8 +1,9 @@
 class Options {
-    constructor(behaviour = {}, commands = {}, files = {}) {
+    constructor(behaviour = {}, commands = {}, files = {}, downloadFiles = {}) {
         this.behaviour = behaviour;
         this.commands = commands;
         this.files = files;
+        this.downloadFiles = downloadFiles;
     }
 
     setBehaviour(behaviour) {
@@ -15,6 +16,10 @@ class Options {
 
     setFiles(files) {
         this.files = files;
+    }
+
+    setDownloadFiles(downloadFiles) {
+        this.downloadFiles = downloadFiles;
     }
 }
 
@@ -33,12 +38,12 @@ class Terminal {
                     "I love working on complex software problems and building simple solutions.",
                     "I tend to write silly code in my free time. This portfolio being an example for instace.",
                     "&nbsp;",
-                    "Feel free to hack around!"
+                    "Feel free to hack around!",
                 ],
                 "socials.txt": [
                     "LinkedIn - [ <a href='https://www.linkedin.com/in/5aharsh/'>https://www.linkedin.com/in/5aharsh/</a> ]",
                     "Stackoverflow - [ <a href='https://stackoverflow.com/users/4720652'>https://stackoverflow.com/users/4720652</a> ]",
-                    "GitHub - [ <a href='https://github.com/5aharsh'>https://github.com/5aharsh</a> ]"
+                    "GitHub - [ <a href='https://github.com/5aharsh'>https://github.com/5aharsh</a> ]",
                 ],
                 "projects.txt": [
                     "GitHub Reader - [ <a href='https://github.com/5aharsh/github-reader'>https://github.com/5aharsh/github-reader</a> ]",
@@ -46,40 +51,45 @@ class Terminal {
                     "Toolkit - [ <a href='https://github.com/5aharsh/toolkit'>https://github.com/5aharsh/toolkit</a> ]",
                     "Audio Stream - [ <a href='https://github.com/5aharsh/audio-stream'>https://github.com/5aharsh/audio-stream</a> ]",
                     "Blog - [ <a href='https://github.com/5aharsh/blog-json'>https://github.com/5aharsh/blog-json</a> ]",
-                    "More at <a href='https://github.com/5aharsh?tab=repositories'>my github</a>"
+                    "More at <a href='https://github.com/5aharsh?tab=repositories'>my github</a>",
+                ],
+                "resume.pdf": [
+                    "Can't display the PDF file. Try \"wget resume.pdf\" instead."
                 ]
+            });
+            this.options.setDownloadFiles({
+                "resume.pdf": "files/Saharsh Resume.pdf"
             });
             this.options.setCommands({
                 whoami: (_command_line) => {
-                    this.appendMultiLine([
-                        "Saharsh Anand (@5aharsh)"
-                    ])
+                    this.appendMultiLine(["Saharsh Anand (@5aharsh)"]);
                 },
                 date: (_command_line) => {
-                    this.appendMultiLine([
-                        new Date()
-                    ])
+                    this.appendMultiLine([new Date()]);
                 },
                 pwd: (_command_line) => {
-                    this.appendMultiLine([
-                        window.location.href
-                    ])
+                    this.appendMultiLine([window.location.href]);
                 },
                 clear: this.clearTerminal,
                 ls: (_command_line) => {
-                    this.appendMultiLine([
-                        this.listFiles()
-                    ])
+                    this.appendMultiLine([this.listFiles()]);
                 },
-                cat: (_command_line)=>{
+                cat: (_command_line) => {
                     var file = _command_line[1];
                     if (this.options.files[file] === undefined) {
                         this.appendLine("File not found");
                     } else {
                         this.appendMultiLine(this.options.files[file]);
                     }
-                }
-
+                },
+                wget: (_command_line) => {
+                    var file = _command_line[1];
+                    if (this.options.downloadFiles[file] === undefined) {
+                        this.appendLine("File not found")
+                    } else {
+                        window.location = this.options.downloadFiles[file];
+                    }
+                },
             });
             this.options.setBehaviour({
                 unknown: ["Unknown command... Try 'help'"],
@@ -90,12 +100,14 @@ class Terminal {
         }
     }
 
-    static getTerminalPrint(terminal = '#terminal-print'){
+    static getTerminalPrint(terminal = "#terminal-print") {
         return document.querySelector(terminal);
     }
 
     execute(command) {
-        this.appendLine("<div id='terminal-pointer'>[ <span>Saharsh@Desktop (@5aharsh) ~</span> ]</div>");
+        this.appendLine(
+            "<div id='terminal-pointer'>[ <span>Saharsh@Desktop (@5aharsh) ~</span> ]</div>"
+        );
         this.appendLine(command, "t-thin");
         this.processCommand(command);
         this.input.value = "";
@@ -109,8 +121,8 @@ class Terminal {
         var terminalPrint = document.querySelector("#terminal-print");
         var terminalLine = document.createElement("span");
         terminalLine.className = "terminal-line";
-        if (modifierClass!=null)
-            terminalLine.className += " "+modifierClass;
+        if (modifierClass != null)
+            terminalLine.className += " " + modifierClass;
         terminalLine.innerHTML = text;
         terminalPrint.appendChild(terminalLine);
         window.scrollTo(0, document.body.scrollHeight);
@@ -123,12 +135,14 @@ class Terminal {
     }
 
     processCommand(command) {
-        command = command.replace(/(?:\r\n|\r|\n)/g, '');
+        command = command.replace(/(?:\r\n|\r|\n)/g, "");
         var command_line = command;
         var command_line_array = command_line.split(" ");
         if (command != "") {
             if (this.options.commands[command_line_array[0]] === undefined) {
-                if (this.options.behaviour[command_line_array[0]] === undefined) {
+                if (
+                    this.options.behaviour[command_line_array[0]] === undefined
+                ) {
                     var output = this.options.behaviour["unknown"];
                     for (var i of output) {
                         this.appendLine(i);
@@ -140,7 +154,9 @@ class Terminal {
                     }
                 }
             } else {
-                this.options.commands[command_line_array[0]](command_line_array);
+                this.options.commands[command_line_array[0]](
+                    command_line_array
+                );
             }
         }
     }
@@ -155,7 +171,7 @@ class Terminal {
         return help;
     }
 
-    listFiles(){
+    listFiles() {
         var files = "";
         for (var i in this.options.files) {
             // Add some extra gap for readability
@@ -164,7 +180,7 @@ class Terminal {
         return files;
     }
 
-    clearTerminal(_command_line){
+    clearTerminal(_command_line) {
         Terminal.getTerminalPrint().innerHTML = "";
     }
 }
