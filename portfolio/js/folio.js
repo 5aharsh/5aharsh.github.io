@@ -7,5 +7,11 @@ function openContainer(container) {
 function closeContainer() {
     document.getElementById("about-container").style.height = "0%";
     document.getElementById("about-container").style.top = "100%";
+    document.getElementById("project-container").style.height = "0%";
+    document.getElementById("project-container").style.top = "100%";
+    document.getElementById("work-container").style.height = "0%";
+    document.getElementById("work-container").style.top = "100%";
+    document.getElementById("contact-container").style.height = "0%";
+    document.getElementById("contact-container").style.top = "100%";
     document.getElementById("container-close").style.display = "none";
 }

@@ -88,12 +88,16 @@ body {
 }
 
 #intro-head .folio-links:hover > .folio-link-content, #intro-head .folio-links:focus > .folio-link-content {
-    transform: scale(1.1) translateY(-50%) skewX(25deg);
+    transform: translateY(-50%) skewX(25deg);
     left: 10px;
 }
 
 #intro-head .folio-links:hover > .folio-link-content:before, #intro-head .folio-links:focus > .folio-link-content:before {
-    content: attr(data-icon) ' ';
+    content: attr(data-icon) '\00a0';
+    font-size: 25pt;
+    background-size: 86px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @keyframes navroll {
@@ -107,25 +111,25 @@ body {
 }
 
 #intro-head #nav-about {
-    background: linear-gradient(0deg, #0056b8 50%, #1d63b3 50%);
+    background: linear-gradient(0deg, #0056b8 50%, #004798 50%);
     background-size: 100% 200%;
     background-position: 50% 100%;
 }
 
 #intro-head #nav-project {
-    background: linear-gradient(0deg, #42cf89 50%, #2edf87 50%);
+    background: linear-gradient(0deg, #38be7b 50%, #12a059 50%);
     background-size: 100% 200%;
     background-position: 50% 100%;
 }
 
 #intro-head #nav-work {
-    background: linear-gradient(0deg, #dc5331 50%, #e0694c 50%);
+    background: linear-gradient(0deg, #dc5331 50%, rgb(213, 69, 33) 50%);
     background-size: 100% 200%;
     background-position: 50% 100%;
 }
 
 #intro-head #nav-contact {
-    background: linear-gradient(0deg, #f9cf00 50%, #ffeb3b 50%);
+    background: linear-gradient(0deg, #f9cf00 50%, #ceac00 50%);
     background-size: 100% 200%;
     background-position: 50% 100%;
 }
@@ -146,4 +150,21 @@ body {
 .folio-container ::selection {
     background: white;
     color: black;
+}
+
+#container-close {
+    background: #fff;
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+    transition: all 0.3s ease;
+}
+
+#container-close:hover {
+    transform: scale(1.1) rotate(180deg);
+}
+
+#container-close img {
+    height: 50px;
+    width: 50px;
 }
