@@ -101,16 +101,6 @@ body {
     background-position: center;
 }
 
-@keyframes navroll {
-    0% {
-        background-position: 50% 100%
-    }
-
-    100% {
-        background-position: 50% 0%
-    }
-}
-
 #intro-head #nav-about {
     background: linear-gradient(0deg, #0056b8 50%, #004798 50%);
     background-size: 100% 200%;
@@ -219,17 +209,13 @@ Text animation
     color: #fff;
 }
 
-#about-container #banner {
-    
-}
-
 #my-name {
     background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #d6c911, transparent, transparent);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
-    animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+    -webkit-animation: reveal 4000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+    animation: reveal 4000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
 }
 
 @-webkit-keyframes reveal {
@@ -265,23 +251,60 @@ Text animation
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
+@keyframes navroll {
+    0% {
+        background-position: 50% 100%
+    }
+
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 code {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
+    background-size: 400% 400%;
     color: #fff;
     padding: 0px 4px;
     border-radius: 2px;
-	animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+}
+
+#hand-wave:hover {
+    cursor: pointer;
+    display: inline-block;
+    animation: wave 1s ease infinite;
 }
