@@ -3,37 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/folio.css">
+
     <title>Saharsh Anand</title>
-    <link rel="stylesheet" href="css/terminal.css" />
-    <script src="js/terminal.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div id="header">
-        <span class="header-title">Saharsh@Desktop</span>
-    </div>
-    <div id="terminal">
-        <div id="terminal-print">
-            <div class="terminal-info">
-                <span class="terminal-line">+---------------------------------------------------------------+</span>
-                <span class="terminal-line">|&nbsp;<b>Hello there!</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
-                <span class="terminal-line">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
-                <span class="terminal-line">| I'm Saharsh, working as a Software Engineer at Goldman Sachs. |</span>
-                <span class="terminal-line">| Hack away the terminal to know more about me.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
-                <span class="terminal-line">| If all this looks alien to you, try <a id="terminal-helper" href="javascript:void(0)">help</a> command.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
-                <span class="terminal-line">+---------------------------------------------------------------+</span>
+<body class="text-center">
+    <div class="folio-box">
+        <header class="folio-nav noselect" id="intro-head">
+            <div class="folio-nav-inner">
+                <h1 id="nav-head">Saharsh.</h1>
+                <nav class="nav justify-content-center" id="nav-links">
+                    <a class="folio-links" href="javascript:openContainer('about-container')" id="nav-about">
+                        <span class="folio-link-content" data-icon="👨‍💻">About</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('project-container')" id="nav-project">
+                        <span class="folio-link-content" data-icon="🐱‍💻">Project</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('work-container')" id="nav-work">
+                        <span class="folio-link-content" data-icon="🐱‍🚀">Work</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('contact-container')" id="nav-contact">
+                        <span class="folio-link-content" data-icon="🐱‍🏍">Contact</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="folio-container d-flex align-items-center mb-3" id="about-container">
+            
+            <div class="container d-flex justify-content-center" >
+                <div style="text-align: left; padding: 10px;">
+                    <h2><strong>Hi <span id="hand-wave">👋</span></strong></h2>
+                    <h1>My name is <strong id="my-name">Saharsh Anand</strong></h1>
+                    <h4>And I solve problems by <code>&lt;writing code/&gt;</code> ✨</h4>
+                    <p class="lead">
+                        I am a Software Developer with a passion for building scalable and reliable software systems. I have experience in building web applications, RESTful APIs, and cloud-native applications. My main interest lies in exploring new technologies and building software that solves real-world problems.
+                    </p>
+                    <p>Languages:</p>
+                    <ul id="languages" class="tags">
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                    <p>Technologies:</p>
+                    <ul id="technologies" class="tags">
+                        <li>Microservices</li>
+                        <li>Kafka</li>
+                        <li>Gradle</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                    <p>Frameworks:</p>
+                    <ul id="frameworks" class="tags">
+                        <li>Spring</li>
+                        <li>Flask</li>
+                        <li>Django</li>
+                        <li>React</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div id="terminal-input" class="terminal-line">
-            <div id="terminal-pointer">[ <span>Saharsh@Desktop (@5aharsh) ~</span> ]</div>
-            <div id="terminal-input">
-                <textarea id="terminal-text" class="input" rows="1" spellcheck="false"></textarea>
+        
+
+        <div class="folio-container" id="project-container">
+            <div class="container d-flex justify-content-center flex-column">
+                <h2>Project</h2>
+                <p class="lead">
+                    This page is under construction 🚧
+                </p>
             </div>
         </div>
+        
+
+        <div class="folio-container" id="work-container">
+            <div class="container d-flex justify-content-center flex-column">
+                <h2>Work</h2>
+                <p class="lead">
+                    This page is under construction 🚧
+                </p>
+            </div>
+        </div>
+        
+
+        <div class="folio-container" id="contact-container">
+            <div class="container d-flex justify-content-center flex-column">
+                <h2>Contact</h2>
+                <p class="lead">
+                    This page is under construction 🚧
+                </p>
+            </div>
+        </div>
+        
+        <div id="container-close" class="position-absolute" style="z-index: 101; display: none">
+            <a href="javascript:closeContainer()">
+                <img src="static/close.svg"/>
+            </a>
+        </div>
     </div>
-    <script src="js/portfolio.js"></script>
+    <script src="js/folio.js"></script>
 </body>
 
 </html>
