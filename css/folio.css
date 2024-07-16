@@ -125,6 +125,10 @@ body {
     background-position: 50% 100%;
 }
 
+/*
+Containers
+*/
+
 .folio-container {
     display: flex;
     height: 100%;
@@ -173,39 +177,39 @@ body {
     margin: 20px auto 20px auto;
 }
 
-/*
-Text animation
-*/
-
-
-#about-container .tags {
+.tags {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
 }
 
-#about-container .tags li {
+.tags li {
     list-style-type: none;
     padding: 5px 10px;
     font-weight: bold;
+    font-size: 14px;
     margin: auto 10px;
+    background: #c9d615;
+    box-shadow: 2.5px 2.5px 1.5px #fff;
+    color: #111;
 }
+
+/*
+About Container
+*/
 
 #about-container #languages li {
     background: #c9d615;
-    box-shadow: 3px 3px 1px #fff;
     color: #111;
 }
 
 #about-container #technologies li {
     background: #1369af;
-    box-shadow: 3px 3px 1px #fff;
     color: #fff;
 }
 
 #about-container #frameworks li {
     background: #e22828;
-    box-shadow: 3px 3px 1px #fff;
     color: #fff;
 }
 
@@ -254,9 +258,11 @@ Text animation
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -307,4 +313,93 @@ code {
     cursor: pointer;
     display: inline-block;
     animation: wave 1s ease infinite;
+}
+
+/*
+Project Container
+*/
+
+
+#project-container details {
+    overflow: hidden;
+    /* Keep this line to prevent an odd blue outline around the element in Safari. */
+}
+
+#project-container summary {
+    display: block;
+}
+
+#project-container summary::-webkit-details-marker {
+    display: none;
+}
+
+#project-container span {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 1rem;
+    background: #444;
+    color: #fff;
+    height: 4rem;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#project-container span:hover {
+    cursor: pointer;
+}
+
+#project-container span::before {
+    content: "►";
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    transition: rotate 200ms 400ms ease-out;
+}
+
+#project-container div.project-content {
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 40px;
+    border: 2px solid transparent;
+    transition: max-height 300ms ease-out, border 0ms 100ms linear;
+}
+
+#project-container details[open]+div.project-content {
+    max-height: 800px;
+    /* Set a max-height value enough to show all the content */
+    border-color: #888;
+    padding: 10px 40px;
+    transition: max-height 400ms ease-out, border 0ms linear;
+}
+
+#project-container details[open] span::before {
+    rotate: 90deg;
+    transition: rotate 200ms ease-out;
+}
+
+#project-container .project-href {
+    color: #fff;
+    background: #202020;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#project-container .project-href:hover {
+    color: #202020;
+    background: #fff;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#project-container #project-tags {
+    padding: 20px 0;
 }
