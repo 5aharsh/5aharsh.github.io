@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saharsh Anand</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../media/icon.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../media/icon.svg">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+    <div class="dot" id="pointer"></div>
+    <main>
+        <section>
+            <h2>work</h2>
+            <a href="https://github.com/5aharsh/mesh" class="project">
+                <div class="name">Mesh</div>
+                <div class="about">Allows you to browse local file through browser</div>
+            </a>
+            <a href="https://github.com/5aharsh/toolkit" class="project">
+                <div class="name">Toolkit</div>
+                <div class="about">CLI Utility to get small things done</div>
+            </a>
+            <a href="https://raw.githack.com/guywhogeek/blog-json/master/main.html" class="project">
+                <div class="name">Blog Builder</div>
+                <div class="about">Gives you a structure to get started with a Blog</div>
+            </a>
+            <a href="https://5aharsh.github.io/audio-stream/" class="project">
+                <div class="name">Music Player</div>
+                <div class="about">A music player built in vanilla JavaScript</div>
+            </a>
+            <a href="https://5aharsh.github.io/console/" class="project">
+                <div class="name">Terminal Portfolio</div>
+                <div class="about">An interactive linux terminal-style portfolio</div>
+            </a>
+        </section>
+    </main>
+    <script>
+        var pointer = document.querySelector("#pointer");
+        document.addEventListener("mousemove", (e) => {
+            if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'DIV')) {
+                pointer.style.transform = "scale(2)";
+            } else {
+                pointer.style.transform = "scale(1)";
+            }
+            pointer.style.left = e.pageX - 20 + "px";
+            pointer.style.top = e.pageY - 20 + "px";
+        });
+    </script>
+</body>

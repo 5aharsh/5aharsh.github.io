@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/folio.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+
+    <title>Saharsh Anand</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="text-center">
+    <div class="folio-box">
+        <header class="folio-nav noselect" id="intro-head">
+            <div class="folio-nav-inner">
+                <h1 id="nav-head">Saharsh.</h1>
+                <nav class="nav justify-content-center" id="nav-links">
+                    <a class="folio-links" href="javascript:openContainer('about-container')" id="nav-about">
+                        <span class="folio-link-content" data-icon="👨‍💻">About</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('project-container')" id="nav-project">
+                        <span class="folio-link-content" data-icon="🐱‍💻">Project</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('work-container')" id="nav-work">
+                        <span class="folio-link-content" data-icon="🐱‍🚀">Work</span>
+                    </a>
+                    <a class="folio-links" href="javascript:openContainer('contact-container')" id="nav-contact">
+                        <span class="folio-link-content" data-icon="🐱‍🏍">Contact</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="folio-container d-flex align-items-center mb-3" id="about-container">
+
+            <div class="container d-flex justify-content-center">
+                <div style="text-align: left; padding: 10px;">
+                    <h2><strong>Hi <span id="hand-wave">👋</span></strong></h2>
+                    <h1>My name is <strong id="my-name">Saharsh Anand</strong></h1>
+                    <h4>And I solve problems by <code>&lt;writing code/&gt;</code> ✨</h4>
+                    <p class="lead">
+                        I am a Software Developer with a passion for building scalable and reliable software systems. I
+                        have experience in building web applications, RESTful APIs, and cloud-native applications. My
+                        main interest lies in exploring new technologies and building software that solves real-world
+                        problems.
+                    </p>
+                    <p>Languages:</p>
+                    <ul id="languages" class="tags">
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                    <p>Technologies:</p>
+                    <ul id="technologies" class="tags">
+                        <li>Microservices</li>
+                        <li>Kafka</li>
+                        <li>Gradle</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                    <p>Frameworks:</p>
+                    <ul id="frameworks" class="tags">
+                        <li>Spring</li>
+                        <li>Flask</li>
+                        <li>Django</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="folio-container" id="project-container">
+            <div class="container d-flex justify-content-center">
+                <div style="text-align: left; padding: 30px;">
+                    <details name="project-details" open>
+                        <summary>
+                            <span role="term">👨‍💻 Linux Terminal-style Portfolio</span>
+                        </summary>
+                    </details>
+                    <div role="definition" class="project-content">
+                        <p>An interactive linux terminal-style portfolio. Built using vanilla JavaScript with zero
+                            dependencies. Some relevant linux commands are supported, because adding them all would just
+                            be insanity 😵</p>
+                        <img src="static/console.png" width="620px" alt="Console Portfolio" />
+
+                        <ul class="tags" id="project-tags">
+                            <li>JavaScript</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                        </ul>
+
+                        <p>
+                            <a href="https://github.com/5aharsh/5aharsh.github.io/tree/master/console"
+                                class="project-href">💻 Code</a> &nbsp;
+                            <a href="https://5aharsh.github.io/console/" class="project-href">🌐 Preview</a>
+                        </p>
+                    </div>
+
+                    <details name="project-details" open>
+                        <summary>
+                            <span role="term">📂 Mesh - File explorer inside Browser</span>
+                        </summary>
+                    </details>
+                    <div role="definition" class="project-content">
+                        <p>This allows you to browse and open your local file through browser. Work on Windows and
+                            partially on Mac/Linux</p>
+                        <img src="static/mesh.png" width="620px" alt="Mesh" />
+
+                        <ul class="tags" id="project-tags">
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+
+                        <p>
+                            <a href="https://github.com/5aharsh/mesh" class="project-href">💻 Code</a>
+                        </p>
+                    </div>
+
+                    <details name="project-details" open>
+                        <summary>
+                            <span role="term">🔨 Toolkit - A CLI utility for Windows</span>
+                        </summary>
+                    </details>
+                    <div role="definition" class="project-content">
+                        <p>Command utility to get small things done. I had bunch of small scripts doing this separately,
+                            so here is something clubbed into one as a CLI.</p>
+                        <pre style="background: #111; padding: 10px;">PS E:\Project\toolkit> toolkit --help
+Usage: toolkit [OPTIONS] COMMAND [ARGS]...
+
+  The missing CLI utility from Windows
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  hash   Create Hash String for a file.
+  kill   Kill a running process.
+  serve  Create a static server.
+  task   List all running processes.
+  wget   Download file through server.</pre>
+
+                        <ul class="tags" id="project-tags">
+                            <li>Python</li>
+                            <li title="Click is a library in Python to build CLI">Click</li>
+                        </ul>
+
+                        <p>
+                            <a href="https://github.com/5aharsh/toolkit" class="project-href">💻 Code</a>
+                        </p>
+                    </div>
+
+                    <details name="project-details" open>
+                        <summary>
+                            <span role="term">✍ Blog Builder - A minimal zen-link blog builder</span>
+                        </summary>
+                    </details>
+                    <div role="definition" class="project-content">
+                        <p>Gives you a structure to get started with a Blog. Zero dependencies, all vanilla JavaScript.
+                            Built-in blog search feature (also written in JavaScript).</p>
+                        <img src="static/blog.png" width="620px" alt="Blog" />
+
+                        <ul class="tags" id="project-tags">
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+
+                        <p>
+                            <a href="https://github.com/5aharsh/blog-json" class="project-href">💻 Code</a> &nbsp;
+                            <a href="https://raw.githack.com/guywhogeek/blog-json/master/main.html"
+                                class="project-href">🌐 Preview</a>
+                        </p>
+                    </div>
+
+                    <details name="project-details" open>
+                        <summary>
+                            <span role="term">🎧 Music Player - A minimal music player built in browser</span>
+                        </summary>
+                    </details>
+                    <div role="definition" class="project-content">
+                        <p>A music player built in vanilla JavaScript with zero dependencies (yes, its a recurring
+                            theme). Works similar to building a playlist via JSON and can play music in shuffle or
+                            sequence.</p>
+                        <img src="static/music.png" width="620px" alt="Blog" />
+
+                        <ul class="tags" id="project-tags">
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+
+                        <p>
+                            <a href="https://github.com/5aharsh/audio-stream" class="project-href">💻 Code</a> &nbsp;
+                            <a href="https://5aharsh.github.io/audio-stream/" class="project-href">🌐 Preview</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="folio-container" id="work-container">
+            <div class="container d-flex justify-content-center align-items-center">
+                <p class="lead">
+                    This page is under construction 🚧
+                </p>
+            </div>
+        </div>
+
+        <div class="folio-container" id="contact-container">
+            <div class="container d-flex justify-content-center">
+                <div class="social-buttons">
+                    <a href="https://github.com/5aharsh" class="social-button social-button--github" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/5aharsh/" class="social-button social-button--linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/guywhogeek" class="social-button social-button--twitter" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://stackoverflow.com/users/4720652" class="social-button social-button--stackoverflow" aria-label="StackOverflow">
+                        <i class="fa-brands fa-stack-overflow"></i>
+                    </a>
+                    <a href="mailto:saharsh.here@outlook.com" class="social-button social-button--mail" aria-label="Mail">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="container-close" class="position-absolute" style="z-index: 101; display: none">
+            <a href="javascript:closeContainer()">
+                <img src="static/close.svg" />
+            </a>
+        </div>
+    </div>
+    <script src="js/folio.js"></script>
+</body>
+
+</html>
