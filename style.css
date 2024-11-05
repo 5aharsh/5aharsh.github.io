@@ -6,9 +6,9 @@ html,body {
 
 body {
     background-color: #27374D;
-    /* background-image: url('media/rocket.gif');
+    background-image: url('media/bgg.png');
     background-repeat: no-repeat;
-    background-position: bottom right; */
+    background-position: bottom 0 right 0;
     color: #9DB2BF;
     cursor: default;
     display: flex;
@@ -25,11 +25,13 @@ body {
     margin-top: 10px;
     opacity: 1;
     padding: 10px;
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project:hover {
-    opacity: 0.5;
+    border: 2px solid #526682;
+    background-color: #f5ff3e77;
+    color: #3d3d3d;
 }
 
 .project .name {
@@ -96,7 +98,7 @@ a:hover {
 
 @media (min-width: 720px) {
     body {
-        background-size: 300px 300px;
+        background-size: 200px 200px;
     }
 
     h2:before {
