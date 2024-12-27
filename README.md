@@ -1,4 +1,5 @@
 ## To-do
 
-1. Add color schema - https://chrisyeh96.github.io/2020/03/28/terminal-colors.html
-2. Add more text content - idk what though
+1. Maybe move terminal to a separate repo
+2. Add some sort of menu bar in portfolio instead of having links casually in "about" text
+3. Think more to-dos
