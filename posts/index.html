@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saharsh Anand - Posts</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="posts.css">
+    <link rel="shortcut icon" href="../media/icon.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../media/icon.svg">
+    <script src="posts.js"></script>
+    <style>
+        @media not (min-width: 720px) {
+            body {
+                background-image: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dot" id="pointer"></div>
+    <main>
+        <section>
+            <h2>posts</h2>
+        </section>
+    </main>
+    <script>
+        const section = document.querySelector("main > section");
+
+        posts.forEach(post => {
+            const article = document.createElement("article");
+            article.classList.add("post");
+
+            const h3 = document.createElement("h3");
+            h3.textContent = post.title;
+            article.appendChild(h3);
+
+            const date = document.createElement("span");
+            date.textContent = post.date;
+            article.appendChild(date);
+
+            post.tags.forEach(tag => {
+                const span = document.createElement("span");
+                span.textContent = tag;
+                article.appendChild(span);
+            });
+
+            const contentArticle = document.createElement("article");
+            contentArticle.classList.add("content");
+            contentArticle.innerHTML = post.content;
+            article.appendChild(contentArticle);
+
+            section.appendChild(article);
+        });
+    </script>
+    <script>
+        var pointer = document.querySelector("#pointer");
+        document.addEventListener("mousemove", (e) => {
+            if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'DIV')) {
+                pointer.style.transform = "scale(2)";
+            } else {
+                pointer.style.transform = "scale(1)";
+            }
+            pointer.style.left = e.pageX - 20 + "px";
+            pointer.style.top = e.pageY - 20 + "px";
+        });
+    </script>
+</body>
