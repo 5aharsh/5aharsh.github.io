@@ -5,11 +5,11 @@ html,body {
 }
 
 body {
-    background-color: #27374D;
+    background-color: #1a1a1a;
     background-image: url('media/bgg.png');
     background-repeat: no-repeat;
     background-position: bottom 0 right 0;
-    color: #9DB2BF;
+    color: #f0f0f0;
     cursor: default;
     display: flex;
     font-family: "Poppins", serif;
@@ -17,8 +17,8 @@ body {
 }
 
 .project  {
-    color: #a3a3a3;
-    border: 2px solid #405c83;
+    color: #f0f0f0;
+    border: 2px solid #4a3b2c;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -29,13 +29,12 @@ body {
 }
 
 .project:hover {
-    border: 2px solid #526682;
-    background-color: #f5ff3e77;
-    color: #3d3d3d;
+    border: 2px solid #ff8c00;
+    color: #f0f0f0;
 }
 
 .project .name {
-    color: #cbcbcb;
+    color: #f0f0f0;
     font-size: 17px;
 }
 
@@ -45,7 +44,7 @@ body {
 
 .dot {
     border-radius: 50%;
-    background-color: #fdffdd;
+    background-color: #ff8c00;
     position: absolute;
     height: 40px;
     top:-900px;
@@ -59,7 +58,7 @@ section {
 }
 
 h2 {
-    color: #befffc;
+    color: #ffdd00;
     font-size: 30px;
 }
 
@@ -71,7 +70,7 @@ h2:before {
 a {
     text-decoration: none;
     border-bottom: 2px solid #dedede;
-    color: #ffd682;
+    color: #ffdd00;
     cursor: crosshair;
 }
 
@@ -93,7 +92,7 @@ a {
 }
 
 a:hover {
-    color: #9c9c9c;
+    color: #ffd900;
 }
 
 @media (min-width: 720px) {
