@@ -6,7 +6,7 @@ html,body {
 
 body {
     background-color: #1a1a1a;
-    background-image: url('media/bgg.png');
+    background-image: url('static/bgg.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: bottom 0 right 0;
