@@ -57,6 +57,7 @@ body {
 
 section {
     line-height: 1.7;
+    text-align: justify;
 }
 
 h2 {
@@ -97,7 +98,7 @@ a:hover {
     color: #ffd900;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1024px) {
     body {
         background-size: 200px 200px;
     }
@@ -117,7 +118,7 @@ a:hover {
     }
 }
 
-@media not (min-width: 720px) {
+@media not (min-width: 1024px) {
     body {
         background-size: 200px 200px;
     }
