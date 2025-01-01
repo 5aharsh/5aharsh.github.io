@@ -158,7 +158,7 @@ a:hover {
     width: 0;
     height: 5px;
     background-color: #f0f0f0;
-    animation: load 2s ease-in forwards;
+    animation: load 1s ease-in forwards;
 }
 
 @keyframes load {
