@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="../style.css?v1.0">
     <link rel="shortcut icon" href="../static/icon.svg" type="image/x-icon">
     <link rel="apple-touch-icon" href="../static/icon.svg">
-    <script src="../script.js?v1.0" defer></script>
 </head>
 
 <body>
+    <div id="loading-bar-container">
+        <div class="os-logo">🪿</div>
+        <div class="loading-bar">
+        </div>
+    </div>
     <div class="dot" id="pointer"></div>
     <main>
         <section>
@@ -55,6 +59,22 @@
             }
             pointer.style.left = e.pageX - 20 + "px";
             pointer.style.top = e.pageY - 20 + "px";
+        });
+
+        var faces = ["🪿", "👻", "🐬", "🌊", "🎉", "🤯"]
+
+        document.querySelector(".os-logo").innerHTML = faces[Math.floor(Math.random() * faces.length)];
+        
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                var loader = document.getElementById('loading-bar-container');
+                loader.style.transition = 'opacity 0.5s ease';
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1500);
+
         });
     </script>
 </body>
