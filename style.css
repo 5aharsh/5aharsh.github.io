@@ -165,3 +165,38 @@ a:hover {
     0% { width: 0; }
     100% { width: 400px; }
 }
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    background-color: #101010;
+    border-radius: 30px;
+    color: #ffd900;
+    border: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a.active {
+    background-color: #ffd900;
+    color: #1e1e1e;
+}
+
+nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
+    background-color: #ffd900;
+    color: #1e1e1e;
+}
